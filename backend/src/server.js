@@ -10,7 +10,12 @@ const PORT = process.env.PORT || 5001;
 
 connectDB();
 
+// Middleware to parse JSON request bodies
+app.use(express.json());
+
 app.use("/api/notes", notesRoutes);
+
+
 
 app.listen(PORT, () => {
     console.log("Server started on PORT:", PORT);
